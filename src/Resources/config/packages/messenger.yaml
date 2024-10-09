@@ -1,0 +1,5 @@
+# config/packages/messenger.yaml
+framework:
+  messenger:
+    transports: [] # Désactiver les transports
+    default_bus: ~ # Désactiver le bus par défaut

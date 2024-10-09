@@ -1,0 +1,46 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Symfony specific
+/var/
+vendor/           # <-- Ignore the vendor directory
+*.log
+*.cache
+/.env
+/.env.local
+/.env.*.local
+.phpunit.result.cache
+
+# IDE files
+/.idea/
+/*.sublime-project
+/*.sublime-workspace
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+/build/
+
+# Doctrine
+*.db
+
+# Webpack
+/public/build/
+/public/assets/
+
+# Backup files
+*~
+*.bak
+*.tmp
