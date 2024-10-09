@@ -1,0 +1,37 @@
+services:
+  # Service for ConfigurationChecker
+  HCH\PerformanceOptimizerBundle\Service\ConfigurationChecker:
+    arguments:
+      $logger: '@logger'
+
+  # Service for CacheOptimizer
+  HCH\PerformanceOptimizerBundle\Service\CacheOptimizer:
+    arguments:
+      $cache: '@cache.app'
+      $logger: '@logger'
+
+  # Service for AssetOptimizer
+  HCH\PerformanceOptimizerBundle\Service\AssetOptimizer:
+    arguments:
+      $logger: '@logger'
+
+  # Service for ImageOptimizer
+  HCH\PerformanceOptimizerBundle\Service\ImageOptimizer:
+    arguments:
+      $logger: '@logger'
+
+  # Service for QueryOptimizationChecker
+  HCH\PerformanceOptimizerBundle\Service\QueryOptimizationChecker:
+    arguments:
+      $entityManager: '@doctrine.orm.entity_manager'
+      $logger: '@logger'
+
+  # Command for PerformanceOptimizeCommand
+  HCH\PerformanceOptimizerBundle\Command\PerformanceOptimizeCommand:
+    arguments:
+      $cacheOptimizer: '@HCH\PerformanceOptimizerBundle\Service\CacheOptimizer'
+      $configurationChecker: '@HCH\PerformanceOptimizerBundle\Service\ConfigurationChecker'
+      $assetOptimizer: '@HCH\PerformanceOptimizerBundle\Service\AssetOptimizer'
+      $imageOptimizer: '@HCH\PerformanceOptimizerBundle\Service\ImageOptimizer'
+      $queryOptimizationChecker: '@HCH\PerformanceOptimizerBundle\Service\QueryOptimizationChecker'
+    tags: ['console.command']
